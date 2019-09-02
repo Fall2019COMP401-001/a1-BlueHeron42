@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 public class A1Adept{
 
 	public static void main(String[] args) {
-		DecimalFormat dec = new DecimalFormat(".00");
+		DecimalFormat dec = new DecimalFormat("#.00");
 		Scanner scan = new Scanner(System.in);
 		int numberOfItems = scan.nextInt();
 		String itemNames [] = new String[numberOfItems];
@@ -42,19 +42,22 @@ public class A1Adept{
 		for(o = 0; o<customerCount; o++) {
 			if(customerCosts[o] > biggest) {
 				biggest = customerCosts[o];
+				break;
 			}
 		}
-		
-		System.out.println("Biggest: "+ customerNames[2*(o-1)] + " " + customerNames[2*(o-1)+1] + " (" + dec.format(biggest) + ")");
+		//System.out.println(o);
+		System.out.println("Biggest: "+ customerNames[2*(o)] + " " + customerNames[2*(o)+1] + " (" + dec.format(biggest) + ")");
 
 		double smallest = customerCosts[0];
 		int l = 0;
-		for(l = 1; l < customerCount; l++) {
+		for(l = 0; l < customerCount; l++) {
 			if(customerCosts[l] < smallest) {
 				smallest = customerCosts[l];
+				break;
 			}
 		}
-		System.out.println("Smallest: "+ customerNames[2*(l-1)] + " " + customerNames[2*(l-1)+1] + " (" + dec.format(smallest) + ")");
+		//System.out.println(l);
+		System.out.println("Smallest: "+ customerNames[2*(l)] + " " + customerNames[2*(l)+1] + " (" + dec.format(smallest) + ")");
 
 		double totalCost= 0;
 		for(int a = 0; a < customerCount; a++) {
