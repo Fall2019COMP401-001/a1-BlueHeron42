@@ -1,11 +1,12 @@
 package a1;
 
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class A1Adept{
 
 	public static void main(String[] args) {
-		
+		DecimalFormat dec = new DecimalFormat(".00");
 		Scanner scan = new Scanner(System.in);
 		int numberOfItems = scan.nextInt();
 		String itemNames [] = new String[numberOfItems];
@@ -43,8 +44,8 @@ public class A1Adept{
 				biggest = customerCosts[o];
 			}
 		}
-
-		System.out.println("Biggest: "+ customerNames[2*(o-1)] + " " + customerNames[2*(o-1)+1] + " (" + biggest + ")");
+		
+		System.out.println("Biggest: "+ customerNames[2*(o-1)] + " " + customerNames[2*(o-1)+1] + " (" + dec.format(biggest) + ")");
 
 		double smallest = customerCosts[0];
 		int l = 0;
@@ -53,7 +54,7 @@ public class A1Adept{
 				smallest = customerCosts[l];
 			}
 		}
-		System.out.println("Smallest: "+ customerNames[2*(l-1)] + " " + customerNames[2*(l-1)+1] + " (" + smallest + ")");
+		System.out.println("Smallest: "+ customerNames[2*(l-1)] + " " + customerNames[2*(l-1)+1] + " (" + dec.format(smallest) + ")");
 
 		double totalCost= 0;
 		for(int a = 0; a < customerCount; a++) {
@@ -61,7 +62,7 @@ public class A1Adept{
 		}
 		//System.out.println(totalCost);
 		double average = totalCost/customerCount;
-		System.out.println("Average: " + average);
+		System.out.println("Average: " + dec.format(average));
 	}
 
 }
