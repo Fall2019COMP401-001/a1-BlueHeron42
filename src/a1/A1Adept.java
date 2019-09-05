@@ -45,6 +45,9 @@ public class A1Adept{
 				break;
 			}
 		}
+		if(o == customerCount) {
+			o--;
+		}
 		double smallest = customerCosts[0];
 		int l = 0;
 		for(l = 0; l < customerCount; l++) {
@@ -53,7 +56,9 @@ public class A1Adept{
 				break;
 			}
 		}
-		//System.out.println(l);
+		if(l == customerCount) {
+			l--;
+		}
 		if(customerCount == 1) {
 			System.out.println("Biggest: "+ customerNames[0] + " (" + String.format("%.2f", biggest) + ")");
 			System.out.println("Smallest: "+ customerNames[0] + " (" + String.format("%.2f", smallest) + ")");
@@ -61,14 +66,13 @@ public class A1Adept{
 		else if(customerCount != 1) {
 			System.out.println("Biggest: "+ customerNames[o] + " (" + String.format("%.2f", biggest) + ")");
 			System.out.println("Smallest: "+ customerNames[l] + " (" + String.format("%.2f", smallest) + ")");
-			double totalCost= 0;
-			for(int a = 0; a < customerCount; a++) {
-				totalCost += customerCosts[a];
-			}
-			//System.out.println(totalCost);
-			double average = totalCost/customerCount;
-			System.out.println("Average: " + String.format("%.2f", average));
 		}
+		double totalCost= 0;
+		for(int a = 0; a < customerCount; a++) {
+			totalCost += customerCosts[a];
+		}
+		double average = totalCost/customerCount;
+		System.out.println("Average: " + String.format("%.2f", average));
 	}
 
 }
