@@ -51,7 +51,7 @@ public class A1Adept{
 		double smallest = customerCosts[0];
 		int l = 0;
 		for(l = 0; l < customerCount; l++) {
-			if(customerCosts[l] < smallest) {
+			if(customerCosts[l] <= smallest) {
 				smallest = customerCosts[l];
 				break;
 			}
